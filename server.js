@@ -13,6 +13,10 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
+// ADD THE NEW CODE RIGHT HERE
+app.get('/', (req, res) => {
+  res.send('Portfolio backend is running securely!');
+});
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
   if (!name || !email || !message) {

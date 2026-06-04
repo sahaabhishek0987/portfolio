@@ -45,6 +45,12 @@ app.post('/api/contact', async (req, res) => {
             <p style="color:#555;line-height:1.8;margin-top:16px;">
               In the meantime, feel free to check out my projects or connect with me on LinkedIn and GitHub.
             </p>
+            <p style="color:#555;line-height:1.8;margin-top:16px;">
+              LinkedIn - 
+            </p>
+            <p style="color:#555;line-height:1.8;margin-top:16px;">
+             GitHub - 
+            </p>
             <p style="margin-top:32px;color:#333;">— Abhishek Saha</p>
           </div>
         </div>

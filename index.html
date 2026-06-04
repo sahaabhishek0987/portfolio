@@ -624,13 +624,46 @@
       box-sizing: border-box !important;
     }
 
-  /* 5. Fix the Contact Form "Send Message" button */
+  /* 5. NEW FIXES FOR SQUISHED LAYOUTS (Hero, About, Projects) */
+  /* Forces two-column layouts to stack vertically */
+    .hero, 
+    .hero-content,
+    .about-content, 
+    .about-container,
+    .project, 
+    .project-card,
+    .contact-content,
+    .contact-container {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 30px !important;
+    }
+
+  /* Makes the stacked elements take up the full screen width */
+    .hero > div, 
+    .about-content > div, 
+    .project > div, 
+    .contact-content > div {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+  /* 6. SKILLS SECTION FIX */
+    .skills-container, 
+    .skills-grid {
+      width: 100% !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+    }
+
+  /* 7. CONTACT BUTTON FIX */
+    .contact-form, 
     .contact-form button {
       width: 100% !important;
       box-sizing: border-box !important;
-    }
+   }
 
-  /* 6. Fix Hero buttons if they are squishing */
     .hero-buttons {
       flex-wrap: wrap !important;
     }

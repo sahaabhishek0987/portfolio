@@ -33,7 +33,22 @@ app.post('/api/contact', async (req, res) => {
       from: process.env.EMAIL_USER, 
       to: email,
       subject: `Thank you for reaching out, ${name}!`,
-      text: `Hi ${name},\n\nThank you for contacting me through my portfolio! I have received your message and will get back to you as soon as possible.\n\nHere is a copy of what you sent:\n\n"${message}"\n\nBest regards,\nAbhishek Saha`,
+      html: `
+        <div style="font-family:sans-serif;max-width:600px;margin:auto;background:#f9f9f9;border-radius:8px;overflow:hidden;">
+          <div style="background:#0a0a0f;padding:24px 32px;">
+            <h2 style="color:#e8ff47;margin:0;font-size:22px;">Hey ${name} 👋</h2>
+          </div>
+          <div style="padding:32px;">
+            <p style="color:#333;line-height:1.8;">
+              Thanks for getting in touch! I've received your message and will get back to you as soon as possible — usually within 24–48 hours.
+            </p>
+            <p style="color:#555;line-height:1.8;margin-top:16px;">
+              In the meantime, feel free to check out my projects or connect with me on LinkedIn and GitHub.
+            </p>
+            <p style="margin-top:32px;color:#333;">— Abhishek Saha</p>
+          </div>
+        </div>
+      `,
     };
     await transporter.sendMail(autoReplyOptions);
     res.status(200).json({ success: 'Message sent successfully!' });

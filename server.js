@@ -46,11 +46,14 @@ app.post('/api/contact', async (req, res) => {
               In the meantime, feel free to check out my projects or connect with me on LinkedIn and GitHub.
             </p>
             <p style="color:#555;line-height:1.8;margin-top:16px;">
-              LinkedIn - 
+             GitHub - https://github.com/sahaabhishek0987
+            </p>            
+            <p style="color:#555;line-height:1.8;margin-top:16px;">
+              Instagram - https://www.instagram.com/abhishekkkkkkkkk_?igsh=eXcwOG9scHJwdWpq
             </p>
             <p style="color:#555;line-height:1.8;margin-top:16px;">
-             GitHub - 
-            </p>
+              LinkedIn - https://www.linkedin.com/in/abhishek-saha-45047a2b5
+            </p>            
             <p style="margin-top:32px;color:#333;">— Abhishek Saha</p>
           </div>
         </div>

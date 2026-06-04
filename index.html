@@ -599,24 +599,44 @@
     max-width: 100vw !important;
   }
 
-  /* 1. Add breathing room to sections */
+  /* 1. Add breathing room to the edges of the phone screen */
   section {
     padding-left: 20px !important;
     padding-right: 20px !important;
     box-sizing: border-box !important;
   }
 
-  /* 2. FIX PHOTOS AND IMAGES OVERFLOWING */
-  img, 
-  .hero-image, 
-  .about-image {
-    max-width: 100% !important;
-    height: auto !important;
+  /* 2. THE SMART LAYOUT STACKER */
+  /* This finds the main content box of EVERY section and stacks it vertically */
+  section > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
     width: 100% !important;
+    gap: 40px !important;
+  }
+
+  /* Forces the left text and right image/form to take up the full phone screen */
+  section > div:last-child > div {
+    width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. FIX CONTACT FORM INPUTS CUTTING OFF */
+  /* 3. FIX PHOTOS, IMAGES, AND SKILLS */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  
+  /* Forces skill buttons to wrap neatly instead of breaking off screen */
+  .skills-container, .skills-grid, [class*="skill"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  /* 4. FIX CONTACT FORM INPUTS */
   .contact-form,
   .contact-form input, 
   .contact-form textarea {
@@ -624,48 +644,37 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
-
-  /* 4. RESUME FIXES */
-  .resume-box { 
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 20px !important;
-  }
-  .resume-box div[style] {
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 15px !important;
-  }
-  .resume-box a.btn-primary, 
-  .resume-box a.btn-ghost {
+  
+  /* 5. MAKE ALL BUTTONS FULL WIDTH FOR EASIER TAPPING */
+  a.btn-primary, 
+  a.btn-ghost, 
+  .btn-send,
+  button[type="submit"] {
+    display: block !important;
     width: 100% !important;
     text-align: center !important;
     box-sizing: border-box !important;
+    margin-bottom: 10px !important;
   }
 
-  /* 5. FORCE COLUMNS TO STACK */
-  .hero, .hero-content, .about-content, .about-container,
-  .project, .project-card, .contact-content, .contact-container {
+  /* 6. FIX NAV BAR OVERFLOW (Squished links at the top) */
+  header, nav {
+    flex-wrap: wrap !important;
+  }
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    gap: 15px !important;
+  }
+
+  /* 7. OVERRIDE HTML INLINE STYLES (Targeting the buttons) */
+  .resume-box div[style],
+  .hero div[style] {
     display: flex !important;
     flex-direction: column !important;
-    gap: 30px !important;
-  }
-  .hero > div, .about-content > div, .project > div, .contact-content > div {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* 6. SKILLS & BUTTON FIXES */
-  .skills-container, .skills-grid {
-    width: 100% !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: flex-start !important;
-  }
-  .contact-form button, .hero-buttons {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    flex-wrap: wrap !important;
+    gap: 15px !important;
   }
 }
 </style>

@@ -607,9 +607,8 @@
   }
 
   /* =========================================
-     FIX 1: HERO IMAGE (Cyan Arrow)
+     FIX 1: HERO IMAGE STACKING
   ========================================= */
-  /* Force the Hero area to stack vertically */
   .hero, #home, .home-section, header, 
   section > div, section > div:last-child {
     display: flex !important;
@@ -618,7 +617,6 @@
     gap: 30px !important;
   }
 
-  /* Force the yellow box/photo to drop under the text */
   .hero > div, .hero-content > div, #home > div {
     width: 100% !important;
     max-width: 100% !important;
@@ -628,7 +626,7 @@
   }
 
   /* =========================================
-     FIX 2: PROJECT LINKS (Yellow Arrow)
+     FIX 2: PROJECT LINKS
   ========================================= */
   .project, .project-card, .project-item {
     display: flex !important;
@@ -636,9 +634,7 @@
     position: relative !important; 
   }
 
-  /* Grab the floating links, strip their positioning, and shove them to the bottom */
-  .project-links, 
-  .project-links-container, 
+  .project-links, .project-links-container, 
   .project-card > div[style*="absolute"], 
   .project-card div[style*="right"],
   .project a[href*="github"],
@@ -652,14 +648,28 @@
     justify-content: flex-start !important;
     gap: 20px !important;
     margin-top: 25px !important;
-    order: 10 !important; /* This is the magic rule that drops it to the bottom */
+    order: 10 !important; 
   }
 
-  /* 3. FIX PHOTOS AND SKILLS */
+  /* =========================================
+     FIX 3: REMOVE BLACK GAP UNDER PHOTO
+  ========================================= */
   img {
     max-width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
+    /* Kills the default invisible text space under images */
+    display: block !important; 
+    margin-bottom: 0 !important; 
+  }
+  
+  /* Forces the container box to hug the image perfectly without extra height */
+  .hero div:has(img), 
+  .about-content div:has(img),
+  #home div:has(img) {
+     height: auto !important;
+     min-height: 0 !important;
+     padding-bottom: 0 !important;
   }
   
   .skills-container, .skills-grid, [class*="skill"] {
